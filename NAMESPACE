@@ -1,0 +1,7 @@
+importFrom(Hmisc, cut2)
+importFrom(lattice, wireframe)
+importFrom(stats, rnorm)
+
+export(EstCRMitem, EstCRMperson, fitCRM, plotCRM, simCRM)
+
+S3method(print,CRM)
