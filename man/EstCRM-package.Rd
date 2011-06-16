@@ -12,8 +12,8 @@ This package includes the tools to estimate item and person parameters for the S
 \tabular{ll}{
 Package: \tab EstCRM\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2011-06-08\cr
+Version: \tab 1.1\cr
+Date: \tab 2011-06-16\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }

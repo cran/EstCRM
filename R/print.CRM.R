@@ -3,7 +3,7 @@ function(x, ...){
 cat("EstCRM -- An R Package for Estimating Samejima's Continuous IRT Model Parameters","\n")
 cat("         ","Via Marginal Maximum Likelihood and EM Algorithm","\n")
 cat("","\n")
-cat("Version 1.0  2011","\n")
+cat("Version 1.1  2011","\n")
 cat("","\n")
 cat("Cengiz Zopluoglu","\n")
 cat("","\n")
