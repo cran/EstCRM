@@ -1,8 +1,8 @@
 \name{EstCRMperson}
 \alias{EstCRMperson}
-\title{Estimating the Person Parameters for the Continuous Response Model}
+\title{Estimating Person Parameters for the Continuous Response Model}
 \description{
-Estimate the person parameters for the Continuous Response Model(Samejima,1973)
+Estimate person parameters for the Continuous Response Model(Samejima,1973)
 }
 \usage{
 EstCRMperson(data,ipar,min.item,max.item)

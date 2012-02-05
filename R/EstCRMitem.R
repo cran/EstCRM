@@ -38,7 +38,7 @@ desc[i,4]=max(data[,i],na.rm=TRUE)
 for(i in 1:n){data[,i]= data[,i]-min.item[i]}
 
 max.item <- max.item-min.item
-min.item <- c(0,0,0,0)
+min.item <- rep(0,n)
 
 for(i in 1:n) {
 if(length(which(data[,i]==max.item[i]))!=0) {
@@ -72,12 +72,12 @@ first.term-sec.term
 estEM <- function(data,ipar) { #start internal function 2 
 
 sigma = 1/(sum(ipar[,1]^2)+1) 
-mu <-sigma*rowSums(t(matrix(ipar[,1]^2,ncol=N,nrow=n))*(t(matrix(ipar[,3],ncol=N,nrow=n))*data+t(matrix(ipar[,2],ncol=N,nrow=n)))) # Equation 20 in Shojima's paper
+mu <-sigma*rowSums(t(matrix(ipar[,1]^2,ncol=N,nrow=n))*(t(matrix(ipar[,3],ncol=N,nrow=n))*data+t(matrix(ipar[,2],ncol=N,nrow=n))),na.rm=TRUE) # Equation 20 in Shojima's paper
 
 mumean <- mean(mu,na.rm=TRUE)
 muvar <- var(mu,na.rm=TRUE)
-zijmeanlist <- as.vector(mean(data,na.rm=TRUE))
-zijvarlist <- as.vector(diag(var(data,na.rm=TRUE)))
+zijmeanlist <- as.vector(colMeans(data,na.rm=TRUE))
+zijvarlist <- as.vector(diag(cov(data,use="pairwise.complete.obs")))
 zijmucovlist <- as.vector(cov(data,mu,use="pairwise.complete.obs"))
 
 gamma <- (muvar+sigma)/zijmucovlist  
@@ -92,7 +92,7 @@ list(ipar,loglikelihood(ipar,mu,sigma))
 }
 
 ipar <- t(matrix(nrow=3,ncol=n,c(1,0,1)))  
-ipar[,2] <- -mean(data,na.rm=TRUE)
+ipar[,2] <- -colMeans(data,na.rm=TRUE)
 mu <- rep(0,N)
 sigma <- 1
 oldloglik <- loglikelihood(ipar,mu,sigma)
@@ -124,7 +124,7 @@ for(i in 1:length(loglikelihoods)) itempar[[i]][,3]=1/ipars[[i]][,3]
 
 maximums <- vector("list",length(loglikelihoods))
 start <- t(matrix(nrow=3,ncol=n,c(1,0,1)))  
-start[,2] <- -mean(data,na.rm=TRUE)
+start[,2] <- -colMeans(data,na.rm=TRUE)
 maximums[[1]]<- cbind(max(abs(itempar[[1]]-start)[,1]),max(abs(itempar[[2]]-start)[,2]),max(abs(itempar[[3]]-start)[,3]))
 for(i in 1:(length(loglikelihoods)-1)){
 maximums[[i+1]]=cbind(max(abs(itempar[[i+1]]-itempar[[i]])[,1]),

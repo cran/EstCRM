@@ -5,7 +5,7 @@
 The Eysenck Personality Inventory Impulsivity Subscale
 }
 \description{
-The data came from a published study and was kindly provided by Dr. Ferrando. A group of 1,033 undergraduate student were asked to check on a 112 mm line segment with two end points (almost never, almost always) using their own judgement for the five items taken from the Spanish version of the EPI-A impulsivity subscale. The direct item score was the distance in mm of the check mark from the left end point (Ferrando, 2002).
+The data came from a published study and was kindly provided by Dr. Ferrando. A group of 1,033 undergraduate students were asked to check on a 112 mm line segment with two end points (almost never, almost always) using their own judgement for the five items taken from the Spanish version of the EPI-A impulsivity subscale. The direct item score was the distance in mm of the check mark from the left end point (Ferrando, 2002).
 }
 \usage{data(EPIA)}
 \format{

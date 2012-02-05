@@ -1,10 +1,10 @@
 \name{plotCRM}
 \alias{plotCRM}
 \title{
-Draw the 3D Theoretical Item Category Response Curves
+Draw Three-Dimensional Item Category Response Curves
 }
 \description{
-Draw the 3D Theoretical Category Response Curves given the item parameter matrix and item characteristics such as the maximum and minimum possible values that examinees can get as a score for the item. This 3D representation is an extension of 2D item category response curves in binary and polytomous IRT models because Continuous Response Model have so many response categories. Imagine a 2D item category response curves for a likert type item with 30 categories and Partial Credit Model parameters. Presenting the category response curves in a 2D would look messy and hard to interpret. So, another dimension is drawn for the response categories in the 3D representation.
+This function draws the 3D item category response curves given the item parameter matrix and the maximum and minimum possible values that examinees can get as a score for the item. This 3D representation is an extension of 2D item category response curves in binary and polytomous IRT models. Due to the fact that there are many possible response categories, another dimension is drawn for the response categories in the 3D representation.
 }
 \usage{
 plotCRM(ipar, item, min.item, max.item)

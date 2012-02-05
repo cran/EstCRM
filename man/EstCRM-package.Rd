@@ -3,22 +3,22 @@
 \alias{EstCRM}
 \docType{package}
 \title{
-Calibrating the Parameters for the Samejima's Continuous Response Model
+Calibrating Parameters for the Samejima's Continuous Response Model
 }
 \description{
-This package includes the tools to estimate item and person parameters for the Samejima's Continuous Response Model (CRM) via Marginal Maximum Likelihood and EM algorithm, to compute item fit residual statistics, to draw empirical 3D item category response curves, to draw theoretical 3D item category response curves, and to generate data under the CRM for simulation studies.
+This package includes the tools to estimate model parameters for the Samejima's Continuous Response Model (CRM) via marginal maximum likelihood estimation and EM algorithm, to compute item fit residual statistics, to draw empirical 3D item category response curves, to draw theoretical 3D item category response curves, and to generate data under the CRM for simulation studies.
 }
 \details{
 \tabular{ll}{
 Package: \tab EstCRM\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2011-06-16\cr
+Version: \tab 1.2\cr
+Date: \tab 2012-02-05\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
 
-The package can be used to estimate the item parameters by using \code{\link{EstCRMitem}}, to estimate the person ability parameters by using \code{\link{EstCRMperson}}, to compute the item fit residual statistics after the parameter calibration by using \code{\link{fitCRM}}, to draw empirical 3D item category response curves by using \code{\link{fitCRM}}, to draw theoretical 3D item category response curves by using \code{\link{plotCRM}}, to generate data under Continuous Response Model for the simulation studies by using \code{\link{simCRM}}.
+The package can be used to estimate item parameters by using \code{\link{EstCRMitem}}, to estimate person ability parameters by using \code{\link{EstCRMperson}}, to compute the item fit residual statistics after parameter calibration by using \code{\link{fitCRM}}, to draw empirical 3D item category response curves by using \code{\link{fitCRM}}, to draw theoretical 3D item category response curves by using \code{\link{plotCRM}}, and to generate data under the Continuous Response Model for the simulation studies by using \code{\link{simCRM}}.
 }
 \author{
 Cengiz Zopluoglu
@@ -26,6 +26,7 @@ Cengiz Zopluoglu
 Maintainer: Cengiz Zopluoglu <zoplu001@umn.edu>
 }
 \references{
+Kan, A.(2009). Effect of scale response format on psychometric properties in teaching self-efficacy. \emph{Euroasian Journal of Educational Research}, \emph{34}, 215-228.\cr
 
 Ferrando, P.J.(2002). Theoretical and Empirical Comparison between Two Models for Continuous Item Responses. \emph{Multivariate Behavioral Research}, 37(4), 521-542.
 

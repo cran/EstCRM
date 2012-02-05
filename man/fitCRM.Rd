@@ -1,8 +1,8 @@
 \name{fitCRM}
 \alias{fitCRM}
-\title{Compute the item fit residual statistics for the Continuous Response Model}
+\title{Compute item fit residual statistics for the Continuous Response Model}
 \description{
-Compute the item fit residual statistics for the Continuous Response Model as described in Ferrando (2002)
+Compute item fit residual statistics for the Continuous Response Model as described in Ferrando (2002)
 }
 \usage{
 fitCRM(data, ipar, est.thetas, max.item,group)
@@ -26,7 +26,7 @@ an integer, number of ability groups to compute item fit residual statistics. De
 
 }
 \details{
-The function computes the item fit residual statistics as decribed in Ferrando (2002). The procedure is as the following:
+The function computes the item fit residual statistics as decribed in Ferrando (2002). The steps in the procedure are as the following:
 
 1- Re-scaled \if{latex}{\out{$\mathrel\theta$}}\ifelse{html}{\emph{\out{&theta;}}}{} estimates are obtained.
 
