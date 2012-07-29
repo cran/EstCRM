@@ -1,7 +1,10 @@
+EstCRM_1.3 (2012-07-28)
+
+  * Small changes are added to printing the EstCRMitem output.
+
 EstCRM_1.2 (2012-02-2)
 
-  * A vignette will appear soon in the next version explaining all details of estimation algorithm used in the package
-  * A new function bootCRM() is added to estimate the standard errors of item parameter estimates using non-parameteric bootstrap sampling
+  * A vignette will appear soon in the next version explaining all details of estimation algorithm used in the package  * A new function bootCRM() is added to estimate the standard errors of item parameter estimates using non-parameteric bootstrap sampling
 
 EstCRM_1.1 (2011-06-17)
 

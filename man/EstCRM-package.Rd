@@ -12,8 +12,8 @@ This package includes the tools to estimate model parameters for the Samejima's 
 \tabular{ll}{
 Package: \tab EstCRM\cr
 Type: \tab Package\cr
-Version: \tab 1.2\cr
-Date: \tab 2012-02-05\cr
+Version: \tab 1.3\cr
+Date: \tab 2012-07-29\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
