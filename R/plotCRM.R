@@ -1,17 +1,17 @@
 plotCRM <-
 function(ipar,item,min.item,max.item) {
 
-library(lattice)
 
 a <- ipar[item,1]
 b <- ipar[item,2]
 alpha <- ipar[item,3]
 k <- max.item[item]
+
 prob <- function(theta,x,k) {
-v1=a*(theta-b-((1/alpha)*log((x-.5)/(k-x+.5))))
-v2=a*(theta-b-((1/alpha)*log((x+.5)/(k-x-.5))))
-integrate(dnorm,v2,v1)$value
+z=log(x/(k-x))
+(a/(alpha*sqrt(2*pi)))*exp(-((a*(theta-b-(z/alpha)))^2))
 }
+
 min.max <- (min.item[item]+1):(max.item[item]-1)
 thetas <- seq(from=-3,to=3,by=.1)
 plot <- expand.grid(thetas,min.max)

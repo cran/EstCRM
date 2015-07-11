@@ -1,13 +1,14 @@
 \name{bootCRM}
 \alias{bootCRM}
 \title{
-Computing Standard Errors for Item Parameter Estimates using Non-parametric Bootstrap Sampling
+Computing Standard Errors for Item Parameter Estimates using Bootstrap Sampling
 }
 \description{
 Computes the standard errors of item parameter estimates using a non-parametric bootstrapping approach
 }
 \usage{
-bootCRM(data,max.item,min.item,max.EMCycle=500,converge=.01,nsample=50)
+bootCRM(data,max.item,min.item,max.EMCycle=500,converge=.01,
+        type="Shojima",BFGS=TRUE,nsample=50)
 }
 
 \arguments{
@@ -25,6 +26,13 @@ a number of maximum EM Cycles used in the iteration. Default is 500.
 }
 \item{converge}{
 a criteria value indicating the difference between loglikelihoods of two consecutive EM cycles to stop the iteration. Default is .01 
+}
+\item{type}{
+type of optimization. Default is the non-iterative EM 
+developed by Shojima(2005). 
+}
+\item{BFGS}{
+a valid argument when \code{type} is equal to "Wang&Zeng". If TRUE, the Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm is used to update Hessian.
 }
 \item{nsample}{
 a number of bootstrap samples used in estimating the standard errors. Default is 50

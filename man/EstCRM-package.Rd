@@ -12,8 +12,8 @@ This package includes the tools to estimate model parameters for the Samejima's 
 \tabular{ll}{
 Package: \tab EstCRM\cr
 Type: \tab Package\cr
-Version: \tab 1.3\cr
-Date: \tab 2012-07-29\cr
+Version: \tab 1.4\cr
+Date: \tab 2015-07-11\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
@@ -23,7 +23,7 @@ The package can be used to estimate item parameters by using \code{\link{EstCRMi
 \author{
 Cengiz Zopluoglu
 
-Maintainer: Cengiz Zopluoglu <zoplu001@umn.edu>
+Maintainer: Cengiz Zopluoglu <c.zopluoglu@miami.edu>
 }
 \references{
 Kan, A.(2009). Effect of scale response format on psychometric properties in teaching self-efficacy. \emph{Euroasian Journal of Educational Research}, \emph{34}, 215-228.\cr

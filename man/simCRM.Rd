@@ -24,7 +24,7 @@ a vector of length \emph{m} indicating the maximum possible score for each hypot
 }
 \details{
 
-The \code{simCRM} generates data under Continuous Response Model as described in Shojima(2005). Given the true ability level for person \emph{i} and the true item parameters for item \emph{j}, the transformed response \if{latex}{\out{$z_{ij}$}}\ifelse{html}{}{} of person \emph{i} for item \emph{j} follows a normal distribution with a mean of \if{latex}{\out{$\frac{\mathrel\theta_{i}-\mathrel\beta_{j}}{\mathrel\alpha_{j}}$}}\ifelse{html}{(\emph{\out{&theta}}-\emph{\out{&beta}})/\emph{\out{&alpha}}}{} and a standard deviation of \if{latex}{\out{$\frac{\alpha_{j}^2}{a_{j}^2}$}}\ifelse{html}{\emph{\out{&alpha}}^2/\emph{a^-2}}{}.
+The \code{simCRM} generates data under Continuous Response Model as described in Shojima(2005). Given the true ability level for person \emph{i} and the true item parameters for item \emph{j}, the transformed response \if{latex}{\out{$z_{ij}$}}\ifelse{html}{}{} of person \emph{i} for item \emph{j} follows a normal distribution with a mean of \if{latex}{\out{${\mathrel\alpha_{j}}({\mathrel\theta_{i}-\mathrel\beta_{j}})$}}\ifelse{html}{\emph{\out{&alpha}}((\emph{\out{&theta}}-\emph{\out{&beta}}))}{} and a standard deviation of \if{latex}{\out{$\frac{\alpha_{j}^2}{a_{j}^2}$}}\ifelse{html}{\emph{\out{&alpha}}^2/\emph{a^-2}}{}.
 
 }
 \value{

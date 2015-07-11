@@ -1,11 +1,11 @@
-bootCRM <- function(data,max.item,min.item,max.EMCycle=500,converge=.01,nsample=50) {
+bootCRM <- function(data,max.item,min.item,max.EMCycle=500,converge=.01,type="Shojima",BFGS=TRUE,nsample=50) {
 
-org <- EstCRMitem(data, max.item, min.item, max.EMCycle, converge)$param
+org <- EstCRMitem(data, max.item, min.item, max.EMCycle, converge,type="Shojima",BFGS=TRUE)$param
 
 pars <- vector("list",nsample)
 for(i in 1:nsample) {
 	d <- data[sample(1:nrow(data),nrow(data),replace = TRUE),]
-	pars[[i]] <- EstCRMitem(d, max.item, min.item, max.EMCycle, converge)$param
+	pars[[i]] <- EstCRMitem(d, max.item, min.item, max.EMCycle, converge,type="Shojima",BFGS=TRUE)$param
 }
 
 average <- matrix(nrow=nrow(org),ncol=ncol(org))

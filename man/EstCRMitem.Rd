@@ -5,7 +5,8 @@
 Estimate item parameters for the Continuous Response Model (Samejima,1973)
 }
 \usage{
-EstCRMitem(data, max.item, min.item, max.EMCycle = 500, converge = 0.01)
+EstCRMitem(data, max.item, min.item, max.EMCycle = 500, converge = 0.01,
+           type="Shojima",BFGS=TRUE)
 }
 
 \arguments{
@@ -23,6 +24,12 @@ a number of maximum EM Cycles used in the iteration. Default 500.
 }
   \item{converge}{
 a criteria value indicating the difference between loglikelihoods of two consecutive EM cycles to stop the iteration. Default .01 
+}
+  \item{type}{
+type of optimization. Takes two values, either "Shojima" or "Wang&Zeng". Default is the non-iterative EM developed by Shojima(2005). See details.
+}
+  \item{BFGS}{
+a valid argument when \code{type} is equal to "Wang&Zeng". If TRUE, the Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm is used to update Hessian.
 }
 }
 \details{
@@ -50,14 +57,10 @@ Then, the conditional probability density function of the random variable \emph{
 
 The conditional pdf of \emph{Z} is a normal density function with a mean of \if{latex}{\out{$\mathrel\alpha$}}\ifelse{html}{\emph{\out{&alpha;}}}{}(\if{latex}{\out{$\mathrel\theta$}}\ifelse{html}{\emph{\out{&theta;}}}{}-\emph{b}) and a variance of \if{latex}{\out{$\mathrel\alpha^2$}}\ifelse{html}{\emph{\out{&alpha;}^2}}{}/ \if{latex}{\out{$a^2$}}\ifelse{html}{a^2}{}.\cr
 
-Wang & Zeng (1998) proposed an algorithm to estimate the CRM parameters via marginal maximum likelihood and Expectation-Maximization (EM) algorithm. In the Expectation step, the expected log-likelihood function is obtained based on the integration over the posterior \if{latex}{\out{$\mathrel\theta$}}\ifelse{html}{\emph{\out{&theta;}}}{} distribution by using the Gaussian quadrature points. In the Maximization step, the parameters are estimated by solving the first and second derivatives of the expected log-likelihood function with rescpect to \emph{a}, \emph{b}, and \if{latex}{\out{$\mathrel\alpha$}}\ifelse{html}{\emph{\out{&alpha;}}}{} parameters via Newton-Raphson procedure. A sequence of E-step and M-step repeats until the difference between the two consecutive loglikelihoods is smaller than a convergence criteria. A computer program EM2 was written in C language and published by Wang & Zeng (1998) to estimate the parameters for the CRM. EM2 works in a DOS environment and available as an executable file. However, it works only with 32-bit computers. \cr
+Wang & Zeng (1998) proposed an algorithm to estimate the CRM parameters via marginal maximum likelihood and Expectation-Maximization (EM) algorithm. In the Expectation step, the expected log-likelihood function is obtained based on the integration over the posterior \if{latex}{\out{$\mathrel\theta$}}\ifelse{html}{\emph{\out{&theta;}}}{} distribution by using the Gaussian quadrature points. In the Maximization step, the parameters are estimated by solving the first and second derivatives of the expected log-likelihood function with rescpect to \emph{a}, \emph{b}, and \if{latex}{\out{$\mathrel\alpha$}}\ifelse{html}{\emph{\out{&alpha;}}}{} parameters via Newton-Raphson procedure. A sequence of E-step and M-step repeats until the difference between the two consecutive loglikelihoods is smaller than a convergence criteria. This procedure is available through \code{type="Wang&Zeng"} argument. If \code{type} is equal to "Wang&Zeng", then user can specify \code{BFGS} argument as either TRUE or FALSE. If \code{BFGS} argument is TRUE, then the Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm is used to approximate Hessian.  If \code{BFGS} argument is FALSE, then the Hessian is directly computed.\cr
 
-Shojima (2005) simplified the EM algorithm proposed by Wang & Zeng(1998). He derived the closed formulas for computing the loglikelihood in the E-step and estimating the parameters in the M-step (please see the reference paper below for equations). He showed that the equations of the first derivatives in the M-step can be solved algebraically by assuming flat (non-informative) priors for the item parameters. Shojima (2005) programmed the simplified EM algorithm in Mathematica and also reported the results of a simulation study. The study suggested that the simplification of the EM algorithm by assuming flat(non-informative) priors for the item parameters works as well as the algorithm implemented by EM2 program.\cr
+Shojima (2005) simplified the EM algorithm proposed by Wang & Zeng(1998). He derived the closed formulas for computing the loglikelihood in the E-step and estimating the parameters in the M-step (please see the reference paper below for equations). He showed that the equations of the first derivatives in the M-step can be solved algebraically by assuming flat (non-informative) priors for the item parameters.  This procedure is available through \code{type="Shojima"} argument.  \cr
 
-The \code{EstCRMitem()} function implements the algorithm proposed by Shojima(2005) and estimates the item parameters via marginal maximum likelihood estimation and EM algorithm by assuming the flat priors for the item parameters.
-\cr
-\cr
-\cr
 }
 
 \value{
@@ -99,10 +102,6 @@ Cengiz Zopluoglu
 \code{\link{fitCRM}} for computing item-fit residual statistics and drawing empirical 3D item category response curves,
 \code{\link{plotCRM}} for drawing theoretical 3D item category response curves,
 \code{\link{simCRM}} for generating data under CRM.
-\cr
-\cr
-\cr
-\cr
 }
 
 \examples{

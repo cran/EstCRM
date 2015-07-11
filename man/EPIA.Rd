@@ -23,10 +23,5 @@ Ferrando, P.J.(2002). Theoretical and Empirical Comparison between Two Models fo
 }
 \references{
 Ferrando, P.J.(2002). Theoretical and Empirical Comparison between Two Models for Continuous Item Responses. \emph{Multivariate Behavioral Research}, 37(4), 521-542.
-\cr
-\cr
-\cr
-\cr
-\cr
 }
 

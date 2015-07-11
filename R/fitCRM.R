@@ -1,7 +1,5 @@
 fitCRM <-
 function(data,ipar,est.thetas,max.item,group=20) {
-library(Hmisc)
-library(lattice)
 
 n=ncol(data)
 N=nrow(data)
